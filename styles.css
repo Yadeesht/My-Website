@@ -43,6 +43,7 @@ header {
     transition: top 0.3s ease-in-out;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    font-size: 1.1rem;
 }
 
 .sticky {
@@ -360,4 +361,43 @@ footer {
 
 .resume-button:hover {
     transform: translateY(-5px);
+}
+
+/* names in the tech */
+.tech-item {
+    position: relative;
+    display: inline-block;
+}
+
+.tech-tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tech-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tech-item:hover .tech-tooltip {
+    visibility: visible;
+    opacity: 1;
 }
